@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Keychains</title>
+<link rel="stylesheet" href="style.css">
+<!--Aclonica Google font.-->
+<link href="https://fonts.googleapis.com/css2?family=Aclonica&display=swap" rel="stylesheet">
+<script src="index.js" defer></script>
+</head>
+<body>
+<header>
+<a href="index.html">
+<image src="Keych_logo.jpg" alt="Keych logo" title="Keych logo" class="Logo" width="100" height="100">
+</a>
+<hr>
+</header>
+<nav style="color:purple;">
+<ul>
+<li><a href="index.html" title="Homepage">Home</a></li>
+<li><a href="Keychains.html" title="Page to see the available keychains">Keychains</a></li>
+<li><a href="Payment.html" title="Page to buy the keychains">Payment</a></li>
+</ul>
+</nav>
+<h3 class="WK">Welcome to Keych</h3>
+
+<!-- Keychain Gallery with Hover Effect -->
+<div class="Gallery" onmouseover="showProductInfo(event, 'Teddy bear keychain', '2€')" onmouseout="clearProductInfo()" onmousemove="moveDescription(event)">
+  <a href="Payment.html">
+    <img src="TB_keychain.jpg" alt="Teddy bear keychain" height="350" width="250">
+  </a>
+</div>
+
+<div class="Gallery" onmouseover="showProductInfo(event, 'Golden dragon keychain', '5€')" onmouseout="clearProductInfo()" onmousemove="moveDescription(event)">
+  <a href="Payment.html"> 
+    <img src="GD_keychain.jpg" alt="Golden dragon keychain" height="350" width="250">
+  </a>
+</div>
+
+<div class="Gallery" onmouseover="showProductInfo(event, 'Silver dragon keychain', '4€')" onmouseout="clearProductInfo()" onmousemove="moveDescription(event)">
+  <a href="Payment.html">
+    <img src="SD_keychain.jpg" alt="Silver dragon keychain" height="350"  width="250">
+  </a>
+</div>
+
+<div class="Gallery" onmouseover="showProductInfo(event, 'Golden crab keychain', '5€')" onmouseout="clearProductInfo()" onmousemove="moveDescription(event)">
+  <a href="Payment.html">
+    <img src="GC_keychain.jpg" alt="Golden crab keychain" height="350" width="250">
+  </a>
+</div>
+
+<div id="DescriptionBox" style="position:absolute; padding:5px; border:1px solid #000; background-color:#fff; display:none;"></div>
+
+<footer>
+<hr>
+<p style="text-align:center;"> <b>All rights reserved ©XMLVC</b></p>
+</footer>
+
+<script>
+function showProductInfo(event, name, price) {
+  const descriptionBox = document.getElementById('DescriptionBox');
+  descriptionBox.style.display = 'block';
+  descriptionBox.innerHTML = `<b>${name}</b><br>Price: ${price}`;
+}
+
+function clearProductInfo() {
+  const descriptionBox = document.getElementById('DescriptionBox');
+  descriptionBox.style.display = 'none';
+}
+
+function moveDescription(event) {
+  const descriptionBox = document.getElementById('DescriptionBox');
+  descriptionBox.style.left = event.pageX + 10 + 'px';
+  descriptionBox.style.top = event.pageY + 10 + 'px';
+}
+</script>
+
+</body>
+</html>

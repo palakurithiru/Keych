@@ -1,0 +1,49 @@
+body{ background-image:url(Home_picture.jpg); background-repeat:no-repeat; background-position:center; background-attachment:fixed;
+background-size:cover; }
+
+.Logo { display: block; margin-left: auto; margin-right: auto; }
+
+h3{
+	text-align:center;
+}
+
+#lc{
+	font-family:Lobster;
+}
+
+#WK{
+	font-family:Sigmar; color:red; text-decoration:none;
+}
+
+.WK{ font-family:Aclonica; }
+
+nav ul{
+list-style-type:none;
+text-align:center;
+overflow:hidden;
+}	
+
+nav a{
+	text-decoration:none;
+	padding:20px;
+	text-align:center;
+}
+
+nav li{
+	float:left;
+}
+
+.Gallery{ 
+border: 3px solid black;
+display:inline-block;
+margin:35px;
+}
+
+.Gallery:hover{ border:4px solid red; }
+#Description{ text-align:center; padding:5px;
+}
+.Address{
+	text-align:center;
+}
+
+pre{ text-align:center; }

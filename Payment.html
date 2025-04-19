@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Payment</title>
+<link rel="stylesheet" href="style.css">
+<!--Sigmar Google font-->
+<link href="https://fonts.googleapis.com/css2?family=Sigmar&display=swap" rel="stylesheet">
+<script src="index.js" defer></script>
+</head>
+<body>
+<header>
+<a href="index.html">
+<image src="Keych_logo.jpg" alt="Keych logo" title="Keych logo" class="Logo" width="100" height="100">
+</a>
+<hr>
+</header>
+<nav style="color:purple;">
+<ul>
+<li><a href="index.html" title="Homepage">Home</a></li>
+<li><a href="Keychains.html" title="Page to see the available keychains">Keychains</a></li>
+<li><a href="Payment.html" title="Page to buy the keychains">Payment</a></li>
+</ul>
+</nav>
+<h3 id="WK">Welcome to Keych</h3>
+
+<p style="text-align:center;"><b>Payment form</b></p>
+<form style="text-align:center;" id="paymentForm" onsubmit="return processOrder()">
+  <label for="Name">Your name</label><br>
+  <input type="text" id="Name" minlength="5" maxlength="20" placeholder="Alex Winston" required><br>
+
+  <label for="PN">Your phone number</label><br>
+  <input type="tel" id="PN" minlength="10" maxlength="10" placeholder="0123456789" required><br>
+
+  <label for="Email">Your email</label><br>
+  <input type="email" id="Email" placeholder="Ab@gmail.com" required><br>
+
+  <label for="Address">Address</label><br>
+  <textarea id="Address" rows="4" cols="26" required ></textarea><br>
+
+  <label for="Quantity">Teddy Bear Keychain</label><br>
+  <input type="number" id="teddyQty" value="0" min="0" onchange="updateTotal()"><br>
+
+  <label for="Quantity">Golden Dragon Keychain</label><br>
+  <input type="number" id="dragonQty" value="0" min="0" onchange="updateTotal()"><br>
+
+  <label for="Quantity">Silver Dragon Keychain</label><br>
+  <input type="number" id="silverQty" value="0" min="0" onchange="updateTotal()"><br>
+
+  <label for="Quantity">Golden Crab Keychain</label><br>
+  <input type="number" id="crabQty" value="0" min="0" onchange="updateTotal()"><br>
+
+  <p>Total Price: <span id="totalPrice">0</span>€</p>
+
+  <input type="submit" value="Submit Order">
+  <input type="reset">
+</form>
+
+<p id="orderStatus" style="text-align:center;"></p>
+
+<footer>
+<hr>
+<p style="text-align:center;"> <b>All rights reserved ©XMLVC</b></p>
+</footer>
+
+<script>
+let prices = {
+  "Teddy bear keychain": 2,
+  "Golden dragon keychain": 5,
+  "Silver dragon keychain": 4,
+  "Golden crab keychain": 5
+};
+
+function updateTotal() {
+  let teddyQty = parseInt(document.getElementById('teddyQty').value) || 0;
+  let dragonQty = parseInt(document.getElementById('dragonQty').value) || 0;
+  let silverQty = parseInt(document.getElementById('silverQty').value) || 0;
+  let crabQty = parseInt(document.getElementById('crabQty').value) || 0;
+
+  let total = teddyQty * prices["Teddy bear keychain"] +
+              dragonQty * prices["Golden dragon keychain"] +
+              silverQty * prices["Silver dragon keychain"] +
+              crabQty * prices["Golden crab keychain"];
+
+  document.getElementById('totalPrice').innerText = total;
+}
+
+function processOrder() {
+  // Show a window alert when the order is submitted
+  alert("Order Submitted!Thank you.");
+  return false; // Prevent form submission
+}
+</script>
+</body>
+</html>
